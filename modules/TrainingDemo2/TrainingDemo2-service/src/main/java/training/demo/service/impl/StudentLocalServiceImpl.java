@@ -14,10 +14,13 @@
 
 package training.demo.service.impl;
 
+import com.liferay.counter.kernel.service.CounterLocalServiceUtil;
 import com.liferay.portal.aop.AopService;
 
 import org.osgi.service.component.annotations.Component;
 
+import training.demo.model.Student;
+import training.demo.service.StudentLocalServiceUtil;
 import training.demo.service.base.StudentLocalServiceBaseImpl;
 
 /**
@@ -28,4 +31,13 @@ import training.demo.service.base.StudentLocalServiceBaseImpl;
 	service = AopService.class
 )
 public class StudentLocalServiceImpl extends StudentLocalServiceBaseImpl {
+	
+	public Student addStudentDetails(String name, String mobileno, String email) {
+		Student studentDetails=StudentLocalServiceUtil.createStudent(CounterLocalServiceUtil.increment(Student.class.getName()));
+		studentDetails.setName(name);
+		studentDetails.setEmail(email);
+		studentDetails.setMobileNo(mobileno);
+		StudentLocalServiceUtil.updateStudent(studentDetails);
+		return studentDetails;
+	}
 }
