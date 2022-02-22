@@ -1,0 +1,4 @@
+Bundle-Name: TrainingDemo1
+Bundle-SymbolicName: com.trainingdemo
+Bundle-Version: 1.0.0
+Export-Package: com.trainingdemo.constants
