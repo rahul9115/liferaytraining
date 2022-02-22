@@ -17,4 +17,5 @@
 <portlet:param name="mvcPath" value="/addStudent.jsp"/>
 </portlet:renderURL>>
 
-<a href="<%=addStudent %>>" class="btn btn-primary btn-default">Add Student</a> 
+
+<a href="<%=addStudent %>" class="btn btn-primary btn-default">Add Student</a> 

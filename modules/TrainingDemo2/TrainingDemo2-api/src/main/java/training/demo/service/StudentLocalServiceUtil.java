@@ -60,6 +60,12 @@ public class StudentLocalServiceUtil {
 		return getService().addStudent(student);
 	}
 
+	public static Student addStudentDetails(
+		String name, String mobileno, String email) {
+
+		return getService().addStudentDetails(name, mobileno, email);
+	}
+
 	/**
 	 * @throws PortalException
 	 */
@@ -293,5 +299,7 @@ public class StudentLocalServiceUtil {
 	}
 
 	private static volatile StudentLocalService _service;
+
+	
 
 }

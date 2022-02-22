@@ -32,7 +32,7 @@ import training.demo.service.base.StudentLocalServiceBaseImpl;
 )
 public class StudentLocalServiceImpl extends StudentLocalServiceBaseImpl {
 	
-	public Student addStudentDetails(String name, String mobileno, String email) {
+	public Student addStudentDetails(String name,String mobileno, String email) {
 		Student studentDetails=StudentLocalServiceUtil.createStudent(CounterLocalServiceUtil.increment(Student.class.getName()));
 		studentDetails.setName(name);
 		studentDetails.setEmail(email);
@@ -40,4 +40,5 @@ public class StudentLocalServiceImpl extends StudentLocalServiceBaseImpl {
 		StudentLocalServiceUtil.updateStudent(studentDetails);
 		return studentDetails;
 	}
+	
 }

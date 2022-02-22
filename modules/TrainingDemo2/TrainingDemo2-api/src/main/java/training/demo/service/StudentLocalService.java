@@ -76,6 +76,9 @@ public interface StudentLocalService
 	@Indexable(type = IndexableType.REINDEX)
 	public Student addStudent(Student student);
 
+	public Student addStudentDetails(
+		String name, String mobileno, String email);
+
 	/**
 	 * @throws PortalException
 	 */

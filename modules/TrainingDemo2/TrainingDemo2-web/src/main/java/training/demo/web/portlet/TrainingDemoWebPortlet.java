@@ -1,9 +1,15 @@
 package training.demo.web.portlet;
 
+import training.demo.model.Student;
+import training.demo.service.StudentLocalServiceUtil;
+
 import training.demo.web.constants.TrainingDemoWebPortletKeys;
 
 import com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet;
+import com.liferay.portal.kernel.util.ParamUtil;
 
+import javax.portlet.ActionRequest;
+import javax.portlet.ActionResponse;
 import javax.portlet.Portlet;
 
 import org.osgi.service.component.annotations.Component;
@@ -27,4 +33,15 @@ import org.osgi.service.component.annotations.Component;
 	service = Portlet.class
 )
 public class TrainingDemoWebPortlet extends MVCPortlet {
+	public void addStudent(ActionRequest actionRequest, ActionResponse actionResponse) {
+		String name= ParamUtil.getString(actionRequest,"name");
+		String email= ParamUtil.getString(actionRequest,"email");
+		String mobileno=ParamUtil.getString(actionRequest,"mobileno");
+		System.out.println("Name wooo"+name);
+		System.out.println("email "+email);
+		System.out.println("Mobile no "+mobileno);
+
+		StudentLocalServiceUtil.addStudentDetails(name, mobileno, email);
+		
+	}
 }

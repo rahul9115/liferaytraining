@@ -47,6 +47,13 @@ public class StudentLocalServiceWrapper
 		return _studentLocalService.addStudent(student);
 	}
 
+	@Override
+	public training.demo.model.Student addStudentDetails(
+		String name, String mobileno, String email) {
+
+		return _studentLocalService.addStudentDetails(name, mobileno, email);
+	}
+
 	/**
 	 * @throws PortalException
 	 */
