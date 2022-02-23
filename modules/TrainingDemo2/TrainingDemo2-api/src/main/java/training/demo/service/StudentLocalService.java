@@ -200,6 +200,10 @@ public interface StudentLocalService
 	public long dynamicQueryCount(
 		DynamicQuery dynamicQuery, Projection projection);
 
+	public Student editStudentDetails(
+			long studentId, String name, String mobileno, String email)
+		throws PortalException;
+
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public Student fetchStudent(long StudentId);
 

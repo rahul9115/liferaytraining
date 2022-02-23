@@ -26,6 +26,7 @@
 <th>Name</th>
 <th>Email</th>
 <th>Phone no</th>
+<th colspan="2">Actions</th>
 </tr>
 <%
 
@@ -34,11 +35,17 @@ for(Student student : studentlist){
 	
 
 %>
+<portlet:renderURL  var="updateStudentURL">
+<portlet:param name="studentId" value="<%= String.valueOf(student.getStudentId()) %>"/>
+<portlet:param name="mvcPath" value="/updateStudent.jsp"/>
+</portlet:renderURL>
+
 <tr>
 <td><%=student.getStudentId() %></td>
 <td><%=student.getName() %></td>
 <td><%=student.getEmail() %></td>
 <td><%=student.getMobileNo() %></td>
+<td><a href="<%=updateStudentURL %>" class="btn btn-primary btn-sm">Update</a></td>
 </tr>
 <%} %>
 </table>

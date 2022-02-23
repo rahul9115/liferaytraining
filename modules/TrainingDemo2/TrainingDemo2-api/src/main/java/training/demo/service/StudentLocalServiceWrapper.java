@@ -224,6 +224,15 @@ public class StudentLocalServiceWrapper
 	}
 
 	@Override
+	public training.demo.model.Student editStudentDetails(
+			long studentId, String name, String mobileno, String email)
+		throws com.liferay.portal.kernel.exception.PortalException {
+
+		return _studentLocalService.editStudentDetails(
+			studentId, name, mobileno, email);
+	}
+
+	@Override
 	public training.demo.model.Student fetchStudent(long StudentId) {
 		return _studentLocalService.fetchStudent(StudentId);
 	}

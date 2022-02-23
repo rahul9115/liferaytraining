@@ -1,4 +1,4 @@
-<%@ include file="/init.jsp" %>
+<%@ include file="init.jsp" %>
 <center>
 <h3>Student Details</h3>
 

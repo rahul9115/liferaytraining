@@ -5,6 +5,7 @@ import training.demo.service.StudentLocalServiceUtil;
 
 import training.demo.web.constants.TrainingDemoWebPortletKeys;
 
+import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet;
 import com.liferay.portal.kernel.util.ParamUtil;
 
@@ -44,4 +45,18 @@ public class TrainingDemoWebPortlet extends MVCPortlet {
 		StudentLocalServiceUtil.addStudentDetails(name, mobileno, email);
 		
 	}
+	public void editStudent(ActionRequest actionRequest, ActionResponse actionResponse) throws PortalException {
+		long studentId=ParamUtil.getLong(actionRequest, "studentId" );
+		String name= ParamUtil.getString(actionRequest,"name");
+		String email= ParamUtil.getString(actionRequest,"email");
+		String mobileno=ParamUtil.getString(actionRequest,"mobileno");
+		System.out.println("Id: "+studentId);
+		System.out.println("Name wooo"+name);
+		System.out.println("email "+email);
+		System.out.println("Mobile no "+mobileno);
+
+		StudentLocalServiceUtil.editStudentDetails(studentId, name, mobileno, email);
+
+	}
+
 }

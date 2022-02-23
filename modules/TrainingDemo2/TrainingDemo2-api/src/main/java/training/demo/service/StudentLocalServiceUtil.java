@@ -210,6 +210,14 @@ public class StudentLocalServiceUtil {
 		return getService().dynamicQueryCount(dynamicQuery, projection);
 	}
 
+	public static Student editStudentDetails(
+			long studentId, String name, String mobileno, String email)
+		throws PortalException {
+
+		return getService().editStudentDetails(
+			studentId, name, mobileno, email);
+	}
+
 	public static Student fetchStudent(long StudentId) {
 		return getService().fetchStudent(StudentId);
 	}

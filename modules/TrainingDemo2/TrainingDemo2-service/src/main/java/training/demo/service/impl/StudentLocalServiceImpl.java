@@ -16,6 +16,7 @@ package training.demo.service.impl;
 
 import com.liferay.counter.kernel.service.CounterLocalServiceUtil;
 import com.liferay.portal.aop.AopService;
+import com.liferay.portal.kernel.exception.PortalException;
 
 import org.osgi.service.component.annotations.Component;
 
@@ -41,4 +42,13 @@ public class StudentLocalServiceImpl extends StudentLocalServiceBaseImpl {
 		return studentDetails;
 	}
 	
+	public Student editStudentDetails(long studentId,String name, String mobileno, String email) throws PortalException  {
+		Student studentDetails=StudentLocalServiceUtil.getStudent(studentId);
+		studentDetails.setName(name);
+		studentDetails.setEmail(email);
+		studentDetails.setMobileNo(mobileno);
+		StudentLocalServiceUtil.updateStudent(studentDetails);
+		return studentDetails;
+		
+	}
 }
